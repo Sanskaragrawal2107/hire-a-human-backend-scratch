@@ -1,6 +1,6 @@
 from fastmcp import FastMCP
-from .models.engineer import EngineerSearchFilter
-from .repositories.engineer_repo import search_engineers as search_engineers_repo
+from src.models.engineer import EngineerSearchFilter
+from src.repositories.engineer_repo import search_engineers as search_engineers_repo
 
 mcp=FastMCP("Hire-a-Human-mcp")
 

@@ -18,6 +18,9 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+# ASGI entrypoint alias for `uvicorn main:main --reload`
+main = app
+
 app.include_router(recruiters.router)
 app.include_router(engineers.router)
 app.include_router(admin.router)

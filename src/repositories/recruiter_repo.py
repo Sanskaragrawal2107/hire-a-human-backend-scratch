@@ -1,15 +1,10 @@
 from src.database import get_db
 from src.models.recruiters import RecruiterCreate, RecruiterInDB, RecruiterPublic, RecruiterStatus
-import bcrypt
 import json
-from passlib.context import CryptContext
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+from src.auth import hash_password
 
 async def create_recruiter(recruiter:RecruiterCreate):
-    password_hash=bcrypt.hashpw(
-        recruiter.password.encode('utf-8'),
-        bcrypt.gensalt()
-    ).decode('utf-8')
+    password_hash = hash_password(recruiter.password)
 
     pool=await get_db()
     async with pool.acquire() as conn:

@@ -3,13 +3,11 @@ from src.models.recruiters import RecruiterCreate, RecruiterPublic
 from src.repositories.recruiter_repo import create_recruiter,get_recruiter_by_email
 from src.models.admin import AdminLoginRequest
 from fastapi import HTTPException
-from passlib.context import CryptContext
-from src.auth import create_access_token
+from src.auth import create_access_token,verify_password
 router=APIRouter(
     prefix="/recruiters",
     tags=["Recruiters"]
 )
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 @router.post("/",response_model=RecruiterPublic)
 async def signup_recruiter(
@@ -25,7 +23,7 @@ async def recruiter_login(body: AdminLoginRequest):
     if not recruiter:
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    if not pwd_context.verify(body.password, recruiter["password_hash"]):
+    if not verify_password(body.password, recruiter["password_hash"]):
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
     if str(recruiter["verification_status"]) == "rejected":

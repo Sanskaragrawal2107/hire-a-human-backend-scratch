@@ -2,6 +2,17 @@ from datetime import datetime,timedelta,timezone
 from jose import JWTError,jwt
 from src.config import SECRET_KEY,ALGORITHM,ACCESS_TOKEN_EXPIRE_MINUTES
 from fastapi import Depends,HTTPException,Header
+from passlib.context import CryptContext
+
+pwd_context = CryptContext(schemes=["bcrypt_sha256", "bcrypt"], deprecated="auto")
+
+
+def hash_password(password: str) -> str:
+    return pwd_context.hash(password)
+
+
+def verify_password(password: str, password_hash: str) -> bool:
+    return pwd_context.verify(password, password_hash)
 
 def create_access_token(data:dict):
     to_encode=data.copy()

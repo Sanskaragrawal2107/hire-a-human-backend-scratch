@@ -1,7 +1,7 @@
 from src.database import get_db
 from src.models.engineer import EngineerCreate,EngineerUpdate,EngineerSearchFilter
-import bcrypt
 import json
+from src.auth import hash_password
 
 
 def _normalize_engineer(row):
@@ -12,10 +12,7 @@ def _normalize_engineer(row):
     return engineer
 
 async def create_engineer(engineer: EngineerCreate):
-    password_hash=bcrypt.hashpw(
-        engineer.password.encode('utf-8'),
-        bcrypt.gensalt()
-    ).decode('utf-8')
+    password_hash = hash_password(engineer.password)
 
     pool = await get_db()
     async with pool.acquire() as conn:

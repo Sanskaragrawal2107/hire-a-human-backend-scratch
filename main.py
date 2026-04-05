@@ -6,6 +6,7 @@ from src.database import create_connection, disconnect_db
 from src.routers import recruiters
 from src.routers import engineers
 from src.routers import admin
+from src.routers import agent
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -24,3 +25,4 @@ main = app
 app.include_router(recruiters.router)
 app.include_router(engineers.router)
 app.include_router(admin.router)
+app.include_router(agent.router)

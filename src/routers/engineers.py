@@ -2,16 +2,13 @@ from fastapi import APIRouter,Depends
 from src.models.engineer import EngineerCreate,EngineerPublic,EngineerUpdate
 from src.repositories.engineer_repo import create_engineer,search_engineers,update_engineer
 from src.database import get_db
-from passlib.context import CryptContext
 from fastapi import HTTPException
-from src.auth import create_access_token
+from src.auth import create_access_token,verify_password
 from src.repositories.engineer_repo import get_engineer_by_email
 from src.models.admin import AdminLoginRequest
 from src.auth import get_current_recruiter
 from typing import List
 from src.models.engineer import EngineerSearchFilter
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 router=APIRouter(
     prefix="/engineers",
@@ -37,7 +34,7 @@ async def engineer_login(body: AdminLoginRequest):
     if not engineer:
         raise HTTPException(status_code=401, detail="Invalid credentials")
     
-    if not pwd_context.verify(body.password, engineer["password_hash"]):
+    if not verify_password(body.password, engineer["password_hash"]):
         raise HTTPException(status_code=401, detail="Invalid credentials")
     
     token = create_access_token(data={

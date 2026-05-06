@@ -24,7 +24,7 @@ async def create_engineer_route(
 
 @router.get("/", response_model=list[EngineerPublic])
 async def get_all_engineers():
-    engineers = await search_engineers()
+    engineers = await search_engineers(EngineerSearchFilter())
     return [dict(e) for e in engineers]
 
 

@@ -2,14 +2,21 @@ from src.auth import create_access_token,get_current_admin,verify_password
 from fastapi import APIRouter
 from src.repositories.admin_repo import get_admin_by_email
 from src.models.admin import AdminLoginRequest,TokenResponse
-from src.repositories.recruiter_repo import verify_recruiter
-from src.models.recruiters import RecruiterReviewRequest
+from src.repositories.recruiter_repo import verify_recruiter, get_all_recruiters
+from src.models.recruiters import RecruiterReviewRequest, RecruiterPublic
 from fastapi import HTTPException,Depends
+from typing import List
 
 router = APIRouter(
     prefix="/admin",
     tags=["Admin"]
 )
+
+@router.get("/recruiters", response_model=List[RecruiterPublic])
+async def list_all_recruiters(admin=Depends(get_current_admin)):
+    """List all recruiters for admin review."""
+    recruiters = await get_all_recruiters()
+    return recruiters
 
 @router.post("/review-recruiter/{recruiter_id}")
 async def review_recruiter(recruiter_id: str, body: RecruiterReviewRequest,admin=Depends(get_current_admin)):

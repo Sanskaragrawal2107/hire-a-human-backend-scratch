@@ -19,6 +19,7 @@ async def create_connection():
         user=db_user,
         password=db_pas,
         database=db_name,
+        ssl='require',
         min_size=2,
         max_size=10
     )

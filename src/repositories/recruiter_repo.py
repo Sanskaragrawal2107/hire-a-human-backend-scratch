@@ -77,4 +77,13 @@ async def get_recruiter_by_email(email: str):
             "SELECT * FROM recruiters WHERE company_email = $1",
             email
         )
-        return dict(row) if row else None   
+        return dict(row) if row else None
+
+async def get_all_recruiters():
+    """Get all recruiters, ordered by creation date (newest first)."""
+    pool = await get_db()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            "SELECT * FROM recruiters ORDER BY created_at DESC"
+        )
+        return [dict(row) for row in rows]

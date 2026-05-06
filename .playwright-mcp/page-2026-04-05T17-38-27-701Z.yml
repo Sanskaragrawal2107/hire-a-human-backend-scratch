@@ -1,0 +1,333 @@
+- generic [ref=e3]:
+  - generic:
+    - img
+  - generic [ref=e4]:
+    - generic [ref=e8]:
+      - heading "HireAHuman API 1.0.0 OAS 3.1" [level=1] [ref=e9]:
+        - text: HireAHuman API
+        - generic [ref=e10]:
+          - generic [ref=e12]: 1.0.0
+          - generic [ref=e14]: OAS 3.1
+      - link "/openapi.json" [ref=e15] [cursor=pointer]:
+        - /url: /openapi.json
+        - generic [ref=e16]: /openapi.json
+    - generic [ref=e19]:
+      - generic [ref=e21]:
+        - heading "Recruiters Collapse operation" [level=3] [ref=e22] [cursor=pointer]:
+          - link "Recruiters" [ref=e23]:
+            - /url: "#/Recruiters"
+          - button "Collapse operation" [expanded] [ref=e24]:
+            - img [ref=e25]
+        - generic [ref=e28]:
+          - generic [ref=e31] [cursor=pointer]:
+            - button "POST /recruiters/ Signup Recruiter" [ref=e32]:
+              - generic [ref=e33]: POST
+              - generic [ref=e34]:
+                - link /recruiters/ [ref=e36]:
+                  - /url: "#/Recruiters/signup_recruiter_recruiters__post"
+                  - generic [ref=e37]:
+                    - text: /recruiters
+                    - text: /
+                - generic [ref=e38]: Signup Recruiter
+            - generic "Copy to clipboard"
+            - button "post /recruiters/" [ref=e41]:
+              - img [ref=e42]
+          - generic [ref=e46] [cursor=pointer]:
+            - button "POST /recruiters/login Recruiter Login" [ref=e47]:
+              - generic [ref=e48]: POST
+              - generic [ref=e49]:
+                - link "/recruiters/login" [ref=e51]:
+                  - /url: "#/Recruiters/recruiter_login_recruiters_login_post"
+                  - generic [ref=e52]:
+                    - text: /recruiters
+                    - text: /login
+                - generic [ref=e53]: Recruiter Login
+            - generic "Copy to clipboard"
+            - button "post /recruiters/login" [ref=e56]:
+              - img [ref=e57]
+      - generic [ref=e60]:
+        - heading "Engineers Collapse operation" [level=3] [ref=e61] [cursor=pointer]:
+          - link "Engineers" [ref=e62]:
+            - /url: "#/Engineers"
+          - button "Collapse operation" [expanded] [ref=e63]:
+            - img [ref=e64]
+        - generic [ref=e67]:
+          - generic [ref=e70] [cursor=pointer]:
+            - button "GET /engineers/ Get All Engineers" [ref=e71]:
+              - generic [ref=e72]: GET
+              - generic [ref=e73]:
+                - link /engineers/ [ref=e75]:
+                  - /url: "#/Engineers/get_all_engineers_engineers__get"
+                  - generic [ref=e76]:
+                    - text: /engineers
+                    - text: /
+                - generic [ref=e77]: Get All Engineers
+            - generic "Copy to clipboard"
+            - button "get /engineers/" [ref=e80]:
+              - img [ref=e81]
+          - generic [ref=e85] [cursor=pointer]:
+            - button "POST /engineers/ Create Engineer Route" [ref=e86]:
+              - generic [ref=e87]: POST
+              - generic [ref=e88]:
+                - link /engineers/ [ref=e90]:
+                  - /url: "#/Engineers/create_engineer_route_engineers__post"
+                  - generic [ref=e91]:
+                    - text: /engineers
+                    - text: /
+                - generic [ref=e92]: Create Engineer Route
+            - generic "Copy to clipboard"
+            - button "post /engineers/" [ref=e95]:
+              - img [ref=e96]
+          - generic [ref=e100] [cursor=pointer]:
+            - button "POST /engineers/login Engineer Login" [ref=e101]:
+              - generic [ref=e102]: POST
+              - generic [ref=e103]:
+                - link "/engineers/login" [ref=e105]:
+                  - /url: "#/Engineers/engineer_login_engineers_login_post"
+                  - generic [ref=e106]:
+                    - text: /engineers
+                    - text: /login
+                - generic [ref=e107]: Engineer Login
+            - generic "Copy to clipboard"
+            - button "post /engineers/login" [ref=e110]:
+              - img [ref=e111]
+          - generic [ref=e115] [cursor=pointer]:
+            - 'button "PUT /engineers/{engineer_id} Update Engineer Route" [ref=e116]':
+              - generic [ref=e117]: PUT
+              - generic [ref=e118]:
+                - 'link "/engineers/{engineer_id}" [ref=e120]':
+                  - /url: "#/Engineers/update_engineer_route_engineers__engineer_id__put"
+                  - generic [ref=e121]:
+                    - text: /engineers
+                    - text: "/{engineer_id}"
+                - generic [ref=e122]: Update Engineer Route
+            - generic "Copy to clipboard"
+            - 'button "put /engineers/{engineer_id}" [ref=e125]':
+              - img [ref=e126]
+          - generic [ref=e130] [cursor=pointer]:
+            - button "POST /engineers/search Search Engineers Route" [ref=e131]:
+              - generic [ref=e132]: POST
+              - generic [ref=e133]:
+                - link "/engineers/search" [ref=e135]:
+                  - /url: "#/Engineers/search_engineers_route_engineers_search_post"
+                  - generic [ref=e136]:
+                    - text: /engineers
+                    - text: /search
+                - generic [ref=e137]: Search Engineers Route
+            - generic "Copy to clipboard"
+            - button "post /engineers/search" [ref=e140]:
+              - img [ref=e141]
+      - generic [ref=e144]:
+        - heading "Admin Collapse operation" [level=3] [ref=e145] [cursor=pointer]:
+          - link "Admin" [ref=e146]:
+            - /url: "#/Admin"
+          - button "Collapse operation" [expanded] [ref=e147]:
+            - img [ref=e148]
+        - generic [ref=e151]:
+          - generic [ref=e154] [cursor=pointer]:
+            - 'button "POST /admin/review-recruiter/{recruiter_id} Review Recruiter" [ref=e155]':
+              - generic [ref=e156]: POST
+              - generic [ref=e157]:
+                - 'link "/admin/review-recruiter/{recruiter_id}" [ref=e159]':
+                  - /url: "#/Admin/review_recruiter_admin_review_recruiter__recruiter_id__post"
+                  - generic [ref=e160]:
+                    - text: /admin
+                    - text: /review-recruiter
+                    - text: "/{recruiter_id}"
+                - generic [ref=e161]: Review Recruiter
+            - generic "Copy to clipboard"
+            - 'button "post /admin/review-recruiter/{recruiter_id}" [ref=e164]':
+              - img [ref=e165]
+          - generic [ref=e169] [cursor=pointer]:
+            - button "POST /admin/login Admin Login" [ref=e170]:
+              - generic [ref=e171]: POST
+              - generic [ref=e172]:
+                - link "/admin/login" [ref=e174]:
+                  - /url: "#/Admin/admin_login_admin_login_post"
+                  - generic [ref=e175]:
+                    - text: /admin
+                    - text: /login
+                - generic [ref=e176]: Admin Login
+            - generic "Copy to clipboard"
+            - button "post /admin/login" [ref=e179]:
+              - img [ref=e180]
+      - generic [ref=e183]:
+        - heading "Agent Collapse operation" [level=3] [ref=e184] [cursor=pointer]:
+          - link "Agent" [ref=e185]:
+            - /url: "#/Agent"
+          - button "Collapse operation" [expanded] [ref=e186]:
+            - img [ref=e187]
+        - generic [ref=e190]:
+          - generic [ref=e193] [cursor=pointer]:
+            - button "POST /agent/threads Create New Thread" [ref=e194]:
+              - generic [ref=e195]: POST
+              - generic [ref=e196]:
+                - link "/agent/threads" [ref=e198]:
+                  - /url: "#/Agent/create_new_thread_agent_threads_post"
+                  - generic [ref=e199]:
+                    - text: /agent
+                    - text: /threads
+                - generic [ref=e200]: Create New Thread
+            - generic "Copy to clipboard"
+            - button "post /agent/threads" [ref=e203]:
+              - img [ref=e204]
+          - generic [ref=e208] [cursor=pointer]:
+            - button "GET /agent/threads List Threads" [ref=e209]:
+              - generic [ref=e210]: GET
+              - generic [ref=e211]:
+                - link "/agent/threads" [ref=e213]:
+                  - /url: "#/Agent/list_threads_agent_threads_get"
+                  - generic [ref=e214]:
+                    - text: /agent
+                    - text: /threads
+                - generic [ref=e215]: List Threads
+            - generic "Copy to clipboard"
+            - button "get /agent/threads" [ref=e218]:
+              - img [ref=e219]
+          - generic [ref=e223] [cursor=pointer]:
+            - 'button "DELETE /agent/threads/{thread_id} Delete Thread Route" [ref=e224]':
+              - generic [ref=e225]: DELETE
+              - generic [ref=e226]:
+                - 'link "/agent/threads/{thread_id}" [ref=e228]':
+                  - /url: "#/Agent/delete_thread_route_agent_threads__thread_id__delete"
+                  - generic [ref=e229]:
+                    - text: /agent
+                    - text: /threads
+                    - text: "/{thread_id}"
+                - generic [ref=e230]: Delete Thread Route
+            - generic "Copy to clipboard"
+            - 'button "delete /agent/threads/{thread_id}" [ref=e233]':
+              - img [ref=e234]
+          - generic [ref=e238] [cursor=pointer]:
+            - 'button "POST /agent/threads/{thread_id}/chat Chat In Thread" [ref=e239]':
+              - generic [ref=e240]: POST
+              - generic [ref=e241]:
+                - 'link "/agent/threads/{thread_id}/chat" [ref=e243]':
+                  - /url: "#/Agent/chat_in_thread_agent_threads__thread_id__chat_post"
+                  - generic [ref=e244]:
+                    - text: /agent
+                    - text: /threads
+                    - text: "/{thread_id}"
+                    - text: /chat
+                - generic [ref=e245]: Chat In Thread
+            - generic "Copy to clipboard"
+            - 'button "post /agent/threads/{thread_id}/chat" [ref=e248]':
+              - img [ref=e249]
+    - generic [ref=e253]:
+      - heading "Schemas" [level=4] [ref=e254] [cursor=pointer]:
+        - button "Schemas" [expanded] [ref=e255]:
+          - generic [ref=e256]: Schemas
+          - img [ref=e257]
+      - generic [ref=e259]:
+        - article [ref=e260]:
+          - generic [ref=e261]:
+            - button "AdminLoginRequest" [ref=e262] [cursor=pointer]:
+              - generic [ref=e264]: AdminLoginRequest
+              - img [ref=e266]
+            - button "Expand all" [ref=e268] [cursor=pointer]
+            - strong [ref=e269]: object
+        - article [ref=e270]:
+          - generic [ref=e271]:
+            - button "ChatRequest" [ref=e272] [cursor=pointer]:
+              - generic [ref=e274]: ChatRequest
+              - img [ref=e276]
+            - button "Expand all" [ref=e278] [cursor=pointer]
+            - strong [ref=e279]: object
+        - article [ref=e280]:
+          - generic [ref=e281]:
+            - button "EngineerCreate" [ref=e282] [cursor=pointer]:
+              - generic [ref=e284]: EngineerCreate
+              - img [ref=e286]
+            - button "Expand all" [ref=e288] [cursor=pointer]
+            - strong [ref=e289]: object
+        - article [ref=e290]:
+          - generic [ref=e291]:
+            - button "EngineerPublic" [ref=e292] [cursor=pointer]:
+              - generic [ref=e294]: EngineerPublic
+              - img [ref=e296]
+            - button "Expand all" [ref=e298] [cursor=pointer]
+            - strong [ref=e299]: object
+        - article [ref=e300]:
+          - generic [ref=e301]:
+            - button "EngineerSearchFilter" [ref=e302] [cursor=pointer]:
+              - generic [ref=e304]: EngineerSearchFilter
+              - img [ref=e306]
+            - button "Expand all" [ref=e308] [cursor=pointer]
+            - strong [ref=e309]: object
+        - article [ref=e310]:
+          - generic [ref=e311]:
+            - button "EngineerUpdate" [ref=e312] [cursor=pointer]:
+              - generic [ref=e314]: EngineerUpdate
+              - img [ref=e316]
+            - button "Expand all" [ref=e318] [cursor=pointer]
+            - strong [ref=e319]: object
+        - article [ref=e320]:
+          - generic [ref=e321]:
+            - button "HTTPValidationError" [ref=e322] [cursor=pointer]:
+              - generic [ref=e324]: HTTPValidationError
+              - img [ref=e326]
+            - button "Expand all" [ref=e328] [cursor=pointer]
+            - strong [ref=e329]: object
+        - article [ref=e330]:
+          - generic [ref=e331]:
+            - button "NewThreadRequest" [ref=e332] [cursor=pointer]:
+              - generic [ref=e334]: NewThreadRequest
+              - img [ref=e336]
+            - button "Expand all" [ref=e338] [cursor=pointer]
+            - strong [ref=e339]: object
+        - article [ref=e340]:
+          - generic [ref=e341]:
+            - button "RecruiterCreate" [ref=e342] [cursor=pointer]:
+              - generic [ref=e344]: RecruiterCreate
+              - img [ref=e346]
+            - button "Expand all" [ref=e348] [cursor=pointer]
+            - strong [ref=e349]: object
+        - article [ref=e350]:
+          - generic [ref=e351]:
+            - button "RecruiterPublic" [ref=e352] [cursor=pointer]:
+              - generic [ref=e354]: RecruiterPublic
+              - img [ref=e356]
+            - button "Expand all" [ref=e358] [cursor=pointer]
+            - strong [ref=e359]: object
+        - article [ref=e360]:
+          - generic [ref=e361]:
+            - button "RecruiterReviewRequest" [ref=e362] [cursor=pointer]:
+              - generic [ref=e364]: RecruiterReviewRequest
+              - img [ref=e366]
+            - button "Expand all" [ref=e368] [cursor=pointer]
+            - strong [ref=e369]: object
+        - article [ref=e370]:
+          - generic [ref=e371]:
+            - button "RecruiterStatus" [ref=e372] [cursor=pointer]:
+              - generic [ref=e374]: RecruiterStatus
+              - img [ref=e376]
+            - button "Expand all" [ref=e378] [cursor=pointer]
+            - strong [ref=e379]: string
+        - article [ref=e380]:
+          - generic [ref=e381]:
+            - button "SubscriptionTier" [ref=e382] [cursor=pointer]:
+              - generic [ref=e384]: SubscriptionTier
+              - img [ref=e386]
+            - button "Expand all" [ref=e388] [cursor=pointer]
+            - strong [ref=e389]: string
+        - article [ref=e390]:
+          - generic [ref=e391]:
+            - button "TokenResponse" [ref=e392] [cursor=pointer]:
+              - generic [ref=e394]: TokenResponse
+              - img [ref=e396]
+            - button "Expand all" [ref=e398] [cursor=pointer]
+            - strong [ref=e399]: object
+        - article [ref=e400]:
+          - generic [ref=e401]:
+            - button "ValidationError" [ref=e402] [cursor=pointer]:
+              - generic [ref=e404]: ValidationError
+              - img [ref=e406]
+            - button "Expand all" [ref=e408] [cursor=pointer]
+            - strong [ref=e409]: object
+        - article [ref=e410]:
+          - generic [ref=e411]:
+            - button "JobType" [ref=e412] [cursor=pointer]:
+              - generic [ref=e414]: JobType
+              - img [ref=e416]
+            - button "Expand all" [ref=e418] [cursor=pointer]
+            - strong [ref=e419]: string

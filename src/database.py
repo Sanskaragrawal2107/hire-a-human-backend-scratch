@@ -1,7 +1,11 @@
 from dotenv import load_dotenv
 import asyncpg
 import os
-load_dotenv()
+from pathlib import Path
+
+# Load .env from the project root (where this file is located)
+env_path = Path(__file__).parent.parent / ".env"
+load_dotenv(dotenv_path=env_path, override=True)
 
 db_user = None
 db_pas = None
@@ -21,10 +25,13 @@ async def create_connection():
         user = os.getenv("DB_USER")
         password = os.getenv("DB_PASSWORD")
         database = os.getenv("DB_NAME", "postgres")
-        
+
         if not host or not user or not password:
-            logging.warning("Database credentials missing. Skipping DB connection.")
-            return
+            missing = []
+            if not host: missing.append("DB_HOST")
+            if not user: missing.append("DB_USER")
+            if not password: missing.append("DB_PASSWORD")
+            raise Exception(f"Database credentials missing: {', '.join(missing)}. Check .env file at {env_path}")
 
         pool = await asyncpg.create_pool(
             host=host,
@@ -39,6 +46,7 @@ async def create_connection():
         logging.info("Database connection pool created.")
     except Exception as e:
         logging.error(f"Failed to create database connection pool: {e}")
+        raise
 
 async def disconnect_db():
     global pool

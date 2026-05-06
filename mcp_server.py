@@ -8,18 +8,12 @@ from src.database import create_connection, disconnect_db
 
 @asynccontextmanager
 async def app_lifespan(server):
-    try:
-        await create_connection()
-    except Exception as e:
-        import logging
-        logging.error(f"Lifespan DB setup error: {e}")
+    # Create connection - will raise exception on failure
+    await create_connection()
     try:
         yield {}
     finally:
-        try:
-            await disconnect_db()
-        except Exception:
-            pass
+        await disconnect_db()
 
 
 mcp = FastMCP(

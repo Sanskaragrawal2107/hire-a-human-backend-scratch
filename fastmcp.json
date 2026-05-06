@@ -1,0 +1,23 @@
+{
+  "$schema": "https://gofastmcp.com/public/schemas/fastmcp.json/v1.json",
+  "source": {
+    "path": "mcp_server.py"
+  },
+  "environment": {
+    "python": "3.11",
+    "requirements": "requirements.txt"
+  },
+  "deployment": {
+    "transport": "http",
+    "host": "0.0.0.0",
+    "port": 3000,
+    "log_level": "INFO",
+    "env": {
+      "DB_USER": "postgres.yodzcqzrbskifjcdnezv",
+      "DB_PASSWORD": "Indore#124567890",
+      "DB_HOST": "aws-1-ap-southeast-2.pooler.supabase.com",
+      "DB_PORT": "5432",
+      "DB_NAME": "postgres"
+    }
+  }
+}
